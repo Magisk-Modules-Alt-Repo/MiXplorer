@@ -1,0 +1,47 @@
+name: Build Module
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Upload Asset
+    runs-on: ubuntu-latest
+    steps:
+          
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Get Id
+        id: mId
+        run: echo "::set-output name=id::$(grep "^id=" module.prop|cut -d'=' -f2)"
+        
+      - name: Get Version
+        id: mVersion
+        run: echo "::set-output name=version::$(grep "^version=" module.prop|cut -d'=' -f2)"
+
+      - name: Build project
+        run: zip -r "${{ steps.mId.outputs.id }}${{ steps.mVersion.outputs.version }}.zip" . -x "README.md" ".git/*" ".github/*" 
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          draft: false
+          prerelease: false
+          tag_name: ${{ steps.mVersion.outputs.version }}
+          release_name: Release ${{ steps.mVersion.outputs.version }}
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ steps.mId.outputs.id }}.${{ steps.mVersion.outputs.version }}.zip
+          asset_name: ${{ steps.mId.outputs.id }}.${{ steps.mVersion.outputs.version }}.zip
+          asset_content_type: application/zip
