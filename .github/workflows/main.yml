@@ -23,7 +23,7 @@ jobs:
         run: echo "::set-output name=version::$(grep "^version=" module.prop|cut -d'=' -f2)"
 
       - name: Build project
-        run: zip -r "${{ steps.mId.outputs.id }}${{ steps.mVersion.outputs.version }}.zip" . -x "README.md" ".git/*" ".github/*" 
+        run: zip -r "${{ steps.mId.outputs.id }}.${{ steps.mVersion.outputs.version }}.zip" . -x "README.md" ".git/*" ".github/*" 
 
       - name: Create Release
         id: create_release
