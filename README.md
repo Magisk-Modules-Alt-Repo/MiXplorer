@@ -43,3 +43,6 @@ if you prefer skipping one or more addons you can just open the zip file, naviga
 or you should go to /data/adb/packages/MiXplorer/system/system_ext/priv-app/ and simply delete the undesired ones.
 
 Enjoy!!
+
+## Download
+get latest build directly from <a href="https://github.com/Magisk-Modules-Alt-Repo/MiXplorer/releases/latest">here</a>
