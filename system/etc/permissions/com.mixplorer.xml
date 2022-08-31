@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<permissions>
-    <privapp-permissions package="com.mixplorer">
-        <permission name="android.permission.MANAGE_DOCUMENTS"/>
-        <permission name="android.permission.INSTALL_PACKAGES"/>
-    </privapp-permissions>
-</permissions>
