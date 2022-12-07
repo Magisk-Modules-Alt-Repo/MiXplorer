@@ -25,22 +25,22 @@ you can start from this module to integrate you debloating settings, in order to
 ### and then, what?
 
 the module contains:
-- com.mixplorer
-- com.mixplorer.addon.archive
-- com.mixplorer.addon.autotag
-- com.mixplorer.addon.codecs
-- com.mixplorer.addon.image
-- com.mixplorer.addon.metadata
-- com.mixplorer.addon.pdf
-- com.mixplorer.addon.signer
-- com.mixplorer.addon.smb
-- com.mixplorer.addon.tagger
+- MiXplorer
+- MiXplorerPdf
+- MiXplorerSMB
+- MiXplorerImage
+- MiXplorerCodecs
+- MiXplorerSigner
+- MiXplorerTagger
+- MiXplorerArchive
+- MiXplorerAutotag
+- MiXplorerMetadata
 
 if you like the idea of having all featureds ready, you should just flash the zip via magisk.
 
-if you prefer skipping one or more addons you can just open the zip file, navigate to /system/system_ext/priv-app/ folder, install **MiXplorer** main apk, plus the add-ons you prefer
+if you prefer skipping one or more addons you can just open the zip file, navigate to /system/app/ folder, install **MiXplorer** main apk, plus the add-ons you prefer
 
-or you should go to /data/adb/packages/MiXplorer/system/system_ext/priv-app/ and simply delete the undesired ones.
+or you should go to /data/adb/packages/MiXplorer/system/app/ and simply delete the undesired ones.
 
 Enjoy!!
 
