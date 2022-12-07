@@ -26,15 +26,15 @@ you can start from this module to integrate you debloating settings, in order to
 
 the module contains:
 - MiXplorer
+- MiXplorerPdf
+- MiXplorerSMB
+- MiXplorerImage
+- MiXplorerCodecs
+- MiXplorerSigner
+- MiXplorerTagger
 - MiXplorerArchive
 - MiXplorerAutotag
-- MiXplorerCodecs
-- MiXplorerImage
 - MiXplorerMetadata
-- MiXplorerPdf
-- MiXplorerSigner
-- MiXplorerSMB
-- MiXplorerTagger
 
 if you like the idea of having all featureds ready, you should just flash the zip via magisk.
 
