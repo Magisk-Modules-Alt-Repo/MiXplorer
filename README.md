@@ -44,11 +44,11 @@ or you should go to /data/adb/packages/MiXplorer/system/app/ and simply delete t
 
 ### setup
 
-all roms come with embedded "Storage Access Framework" feature (that MiXplorer does not implements)
+all roms come with embedded "Storage Access Framework" feature, tipically managed by #FilesPrebuilt , #DocumentsUI or #DocumentsUIGoogle (depending on your rom), used by other applications to navigate the file system
 
-during installation you are required to select (by volume keys) to persist #FilesPrebuilt , #DocumentsUI , #DocumentsUIGoogle (depending on rom type "AOSP" or "Pixel" based)
+since MiXplorer does not implement it, during installation you are required to select (by volume keys) to persist #FilesPrebuilt , #DocumentsUI , #DocumentsUIGoogle
 
-I could not detect wich ones are available in your rom, so choise is your.
+(I could not detect wich ones are available in your rom, so choise is your).
 
 
 Enjoy!!
