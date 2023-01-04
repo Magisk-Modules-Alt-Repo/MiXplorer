@@ -42,6 +42,15 @@ if you prefer skipping one or more addons you can just open the zip file, naviga
 
 or you should go to /data/adb/packages/MiXplorer/system/app/ and simply delete the undesired ones.
 
+### setup
+
+all roms come with embedded "Storage Access Framework" feature (that MiXplorer does not implements)
+
+during installation you are required to select (by volume keys) to persist #FilesPrebuilt , #DocumentsUI , #DocumentsUIGoogle (depending on rom type "AOSP" or "Pixel" based)
+
+I could not detect wich ones are available in your rom, so choise is your.
+
+
 Enjoy!!
 
 ## Download
