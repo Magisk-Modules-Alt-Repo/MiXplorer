@@ -51,4 +51,4 @@ since MiXplorer does not implement it, during installation you are required to s
 (I could not detect wich ones are available in your rom, so choise is your).
 
 
-Enjoy!!
+Enjoy!! 
