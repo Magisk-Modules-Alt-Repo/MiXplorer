@@ -64,18 +64,18 @@ echo ""
 echo "- Storage Access Framework -"
 echo ""
 echo "  - do you prefer to persists FilesPrebuilt (aka AOSP File Manager)?" 
-if chooseport 9; then
+if chooseport 9999; then
   rm -r "$MODPATH/system/product";
 fi
 echo ""
 echo "  - do you prefer to persist DocumentsUI (aka Vendor File Manager)?" 
-if chooseport 9; then
+if chooseport 9999; then
   $((cnt++))
   rm -r "$MODPATH/system/priv-app/DocumentsUI";
 fi
 echo ""
 echo "  - do you prefer to persist DocumentsUIGoogle (aka Google File Manager)?" 
-if chooseport 9; then
+if chooseport 9999; then
   $((cnt++))
   rm -r "$MODPATH/system/priv-app/DocumentsUIGoogle";
 fi
