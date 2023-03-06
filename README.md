@@ -25,16 +25,16 @@ you can start from this module to integrate you debloating settings, in order to
 ### and then, what?
 
 the module contains:
-- MiXplorer
-- MiXplorerPdf
-- MiXplorerSMB
-- MiXplorerImage
-- MiXplorerCodecs
-- MiXplorerSigner
-- MiXplorerTagger
-- MiXplorerArchive
-- MiXplorerAutotag
-- MiXplorerMetadata
+- [MiXplorer](https://forum.xda-developers.com/t/app-2-2-mixplorer-v6-x-released-fully-featured-file-manager.1523691/post-23109280) v6.58.8
+- [MiXplorerPdf](https://play.google.com/store/apps/details?id=com.mixplorer.addon.pdf) v1.12
+- [MiXplorerSMB](https://www.apkmirror.com/apk/hootan-parsa/mix-smb-2-0-2-1/) v2.0/2.1
+- [MiXplorerImage](https://play.google.com/store/apps/details?id=com.mixplorer.addon.image) v2.9
+- [MiXplorerCodecs](https://play.google.com/store/apps/details?id=com.mixplorer.addon.codecs) v2.4
+- [MiXplorerSigner](https://archive.is/fxzru) v1.2 ([description](https://forum.xda-developers.com/t/app-2-2-mixplorer-v6-x-released-fully-featured-file-manager.1523691/page-503#post-62471440))
+- [MiXplorerTagger](https://play.google.com/store/apps/details?id=com.mixplorer.addon.tagger) v1.4
+- [MiXplorerArchive](https://play.google.com/store/apps/details?id=com.mixplorer.addon.archive) v3.13
+- [MiXplorerAutotag](https://forum.xda-developers.com/t/mixplorer-q-a-and-faq-user-manual.3308582/page-21#post-75366938) v1.0
+- [MiXplorerMetadata](https://web.archive.org/web/20170326154127/https://play.google.com/store/apps/details?id=com.mixplorer.addon.metadata) v1.11
 
 if you like the idea of having all featureds ready, you should just flash the zip via magisk.
 
