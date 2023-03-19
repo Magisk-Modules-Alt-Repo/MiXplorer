@@ -84,4 +84,4 @@ if [ $cnt -eq 2 ]; then
 fi
 rm -r "$MODPATH/tools";
 echo ""
-echo "installation completed... ejoy!"
+echo "installation completed... enjoy!"
