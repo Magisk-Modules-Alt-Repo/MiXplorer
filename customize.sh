@@ -1,87 +1,119 @@
-#!/bin/bash
+#!/system/bin/sh
 
-# External Tools
-chmod -R 0755 $MODPATH/tools
+tmp=$MODPATH/tmp
+list=$tmp/MiX-List
+names=$tmp/MiX-Names
 
-chooseport_legacy() {
-  # Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
-  # Calling it first time detects previous input. Calling it second time will do what we want
-  [ "$1" ] && local delay=$1 || local delay=10
-  local error=false
-  while true; do
-    timeout 0 $MODPATH/tools/$ARCH32/keycheck
-    timeout $delay $MODPATH/tools/$ARCH32/keycheck
-    local sel=$?
-    if [ $sel -eq 42 ]; then
-      return 0
-    elif [ $sel -eq 41 ]; then
-      return 1
-    elif $error; then
-      abort "Volume key not detected!"
-    else
-      error=true
-      echo "Volume key not detected. Try again"
-    fi
-  done
-}
+if [ "$API" -lt "30" ] ; then
+  echo 1QGtRpwwFDuVlS5hfnIg08ZUYuGJfQYei>$list
+  echo 1QGtRpwwFDuVlS5hfnIg08ZUYuGJfQYei=MiXplorer-api29>$names
+else
+  echo 1TcUJVt85K4cYXIgIAo634sINdYeamPZN>$list
+  echo 1TcUJVt85K4cYXIgIAo634sINdYeamPZN=MiXplorer>$names
+fi
 
-chooseport() {
-  # Original idea by chainfire and ianmacd @xda-developers
-  [ "$1" ] && local delay=$1 || local delay=10
-  local error=false 
-  while true; do
-    local count=0
-    while true; do
-      timeout $delay /system/bin/getevent -lqc 1 2>&1 > $TMPDIR/events &
-      sleep 0.5; count=$((count + 1))
-      if (`grep -q 'KEY_VOLUMEUP *DOWN' $TMPDIR/events`); then
-        return 0
-      elif (`grep -q 'KEY_VOLUMEDOWN *DOWN' $TMPDIR/events`); then
-        return 1
-      fi
-      [ $count -gt 6 ] && break
-    done
-    if $error; then
-      # abort "Volume key not detected!"
-      echo "Volume key not detected. Trying keycheck method"
-      export chooseport=chooseport_legacy VKSEL=chooseport_legacy
-      chooseport_legacy $delay
-      return $?
-    else
-      error=true
-      echo "Volume key not detected. Try again"
-    fi
-  done
-}
+if [ "$ARCH" = "arm" ] ; then
+  # 32-bit
+  wget=$MODPATH/tools/wget/armeabi-v7a/wget
+  echo 1M2am9N9ym6yB6nKz697QMnldzSMWgdK->>$list
+  echo 1M2am9N9ym6yB6nKz697QMnldzSMWgdK-=MiX.addon.PDF-arm>>$names
 
-# Keep old variable from previous versions of this
-cnt=0
-echo "installing MiXplorer..."
-echo ""
-echo " Volume UP (+) = YES"
-echo " Volume DOWN (-) = NO"
-echo ""
-echo "- Storage Access Framework -"
-echo ""
-echo "  - do you prefer to persists FilesPrebuilt (aka AOSP File Manager)?" 
-if chooseport 0; then
-  rm -r "$MODPATH/system/product";
+  echo 1A3DpEqgQ_zXJWIcHR17-QXUwK1Tgy5hc>>$list
+  echo 1A3DpEqgQ_zXJWIcHR17-QXUwK1Tgy5hc=MiX.addon.Image-arm>>$names
+
+  echo 1M1EgQca6_DR7KneUAdvCiFFs1HNz5BmB>>$list
+  echo 1M1EgQca6_DR7KneUAdvCiFFs1HNz5BmB=MiX.addon.Codecs-arm>>$names
+
+  echo 1Uefuy7X1-akcdkmxckxdM1PyO2nNUB-a>>$list
+  echo 1Uefuy7X1-akcdkmxckxdM1PyO2nNUB-a=MiX.addon.Archive-arm>>$names
+else
+  # 64-bit
+  wget=$MODPATH/tools/wget/arm64-v8a/wget
+  echo 1bWjIUHWvyLPnJ9L3FDDg0tdJuxJoQC54>>$list
+  echo 1bWjIUHWvyLPnJ9L3FDDg0tdJuxJoQC54=MiX.addon.PDF-arm64>>$names
+
+  echo 1htfYSPjCTCzMerfdg6jdekiQSw4K7Nhb>>$list
+  echo 1htfYSPjCTCzMerfdg6jdekiQSw4K7Nhb=MiX.addon.Image-arm64>>$names
+
+  echo 12xga5i6BKa3L_Ina_CLOvmGmbiJPs1wQ>>$list
+  echo 12xga5i6BKa3L_Ina_CLOvmGmbiJPs1wQ=MiX.addon.Codecs-arm64>>$names
+
+  echo 1_zPA03z1kgUlTUjuR9ACn7yX9csMiHj5>>$list
+  echo 1_zPA03z1kgUlTUjuR9ACn7yX9csMiHj5=MiX.addon.Archive-arm64>>$names
 fi
-echo ""
-echo "  - do you prefer to persist DocumentsUI (aka Vendor File Manager)?" 
-if chooseport 0; then
-  $((cnt++))
-  rm -r "$MODPATH/system/priv-app/DocumentsUI";
-fi
-echo ""
-echo "  - do you prefer to persist DocumentsUIGoogle (aka Google File Manager)?" 
-if chooseport 0; then
-  $((cnt++))
-  rm -r "$MODPATH/system/priv-app/DocumentsUIGoogle";
-fi
-if [ $cnt -eq 2 ]; then
-  rm -r "$MODPATH/system/priv-app";
-fi
-rm -r "$MODPATH/tools";
-echo ""
-echo "installation completed... ejoy!"
+
+# common
+echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp>>$list
+echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp=MiX.addon.AutoTag>>$names
+
+echo 1JJIJHFiEZz4rnXl-v-_3lp26D77VYest>>$list
+echo 1JJIJHFiEZz4rnXl-v-_3lp26D77VYest=MiX.addon.Tagger>>$names
+
+chmod 777 $wget
+
+echo
+echo
+echo Downloading... 
+for i in $(cat $list)
+do
+  name=`grep ^$i= $names | cut -d "=" -f 2`
+  echo    - $name...
+  $wget -q --no-check-certificate -O "$tmp/$name.apk" "https://docs.google.com/uc?export=download&confirm=&id=$i"
+done
+
+sleep 1
+
+echo
+echo
+echo Installing... 
+for i in $(cat $list)
+do
+  name=`grep ^$i= $names | cut -d "=" -f 2`
+  echo    - $name...
+  pm install --dont-kill "$tmp/$name.apk" > /dev/null 2>&1
+done
+echo    - MiX.addon.Metadata...
+pm install --dont-kill "$tmp/MiX.addon.Metadata.apk" > /dev/null 2>&1
+
+echo    - MiX.addon.Signer...
+pm install --dont-kill "$tmp/MiX.addon.Signer.apk" > /dev/null 2>&1
+
+echo    - MiX.addon.SMB...
+pm install --dont-kill "$tmp/MiX.addon.SMB.apk" > /dev/null 2>&1
+
+sleep 1
+
+echo
+echo
+echo Cleaning... 
+for i in $(cat $list)
+do
+  name=`grep ^$i= $names | cut -d "=" -f 2`
+  echo    - $name...
+  rm -rf "$tmp/$name.apk" > /dev/null 2>&1
+done
+echo    - MiX.addon.Metadata...
+rm -rf "$tmp/MiX.addon.Metadata.apk" > /dev/null 2>&1
+
+echo    - MiX.addon.Signer...
+rm -rf "$tmp/MiX.addon.Signer.apk" > /dev/null 2>&1
+
+echo    - MiX.addon.SMB...
+rm -rf "$tmp/MiX.addon.SMB.apk" > /dev/null 2>&1
+
+rm -rf $MODPATH/tmp
+rm -rf $MODPATH/tools
+
+echo > $MODPATH/remove
+echo > $MODPATH/disabled
+
+echo
+echo
+echo
+echo visit https://mixplorer.com/beta/ for latest beta
+echo
+echo chekout MiXplorer silver on playstore
+echo to supporting MiXplorer dev-team 
+echo
+echo Enjoy!
+echo

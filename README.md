@@ -25,16 +25,16 @@ you can start from this module to integrate you debloating settings, in order to
 ### and then, what?
 
 the module contains:
-- MiXplorer
-- MiXplorerPdf
-- MiXplorerSMB
-- MiXplorerImage
-- MiXplorerCodecs
-- MiXplorerSigner
-- MiXplorerTagger
-- MiXplorerArchive
-- MiXplorerAutotag
-- MiXplorerMetadata
+- MiXplorer v6.63.1
+- MiXplorer addon Pdf v1.13
+- MiXplorer addon SMB v2.1
+- MiXplorer addon Image v2.10
+- MiXplorer addon Codecs v2.5
+- MiXplorer addon Signer v1.2
+- MiXplorer addon Tagger v1.4
+- MiXplorer addon Archive v3.13
+- MiXplorer addon Autotag v1.0
+- MiXplorer addon Metadata v1.11
 
 if you like the idea of having all featureds ready, you should just flash the zip via magisk.
 
