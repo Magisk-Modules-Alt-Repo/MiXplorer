@@ -40,7 +40,7 @@ the module contains:
 
 leveraging Magisk's power to install MiXplorer (and all it's add-ons) in one shot on your device
 
-<b>n.b.</b>: now ahead this module will not apply any changes to system folder, nor deploying MiXplorer at system level, nor removing ROM's document managers - that's up to you - I am just helping you to setup MiXplorer full features in one shot
+<b>n.b.</b>: now ahead this module will not apply any changes to system folder, nor deploying MiXplorer at system level, nor removing ROM's document managers - that's up to you - it just helps you to setup MiXplorer full features in one shot
 
 
 checkout-out also [MiX-Beta](https://mixplorer.com/beta/) or Get [MiXplorer-Silver](https://play.google.com/store/apps/details?id=com.mixplorer.silver) from PlayStore to support MiXplorer developer
