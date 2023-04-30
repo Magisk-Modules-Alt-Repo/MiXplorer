@@ -36,12 +36,6 @@ the module contains:
 - [MiXplorer addon Autotag](https://forum.xda-developers.com/t/mixplorer-q-a-and-faq-user-manual.3308582/page-21#post-75366938) v1.0
 - [MiXplorer addon Metadata](https://web.archive.org/web/20170326154127/https://play.google.com/store/apps/details?id=com.mixplorer.addon.metadata) v1.11
 
-if you like the idea of having all featureds ready, you should just flash the zip via magisk.
-
-if you prefer skipping one or more addons you can just open the zip file, navigate to /system/app/ folder, install **MiXplorer** main apk, plus the add-ons you prefer
-
-or you should go to /data/adb/packages/MiXplorer/system/app/ and simply delete the undesired ones.
-
 ### setup
 
 leveraging Magisk's power to install MiXplorer (and all it's add-ons) in one shot on your device
