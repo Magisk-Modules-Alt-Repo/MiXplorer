@@ -36,19 +36,13 @@ the module contains:
 - MiXplorer addon Autotag v1.0
 - MiXplorer addon Metadata v1.11
 
-if you like the idea of having all featureds ready, you should just flash the zip via magisk.
-
-if you prefer skipping one or more addons you can just open the zip file, navigate to /system/app/ folder, install **MiXplorer** main apk, plus the add-ons you prefer
-
-or you should go to /data/adb/packages/MiXplorer/system/app/ and simply delete the undesired ones.
-
 ### setup
 
-all roms come with embedded "Storage Access Framework" feature, tipically managed by #FilesPrebuilt , #DocumentsUI or #DocumentsUIGoogle (depending on your rom), used by other applications to navigate the file system
+leveraging Magisk's modules power to install MiXplorer (and all it's add-ons) in one shot on your device
 
-since MiXplorer does not implement it, during installation you are required to select (by volume keys) to persist #FilesPrebuilt , #DocumentsUI , #DocumentsUIGoogle
 
-(I could not detect wich ones are available in your rom, so choise is your).
+n.b.: now ahead this module will not push apks as system feature, everithing will be installed at user's level,
 
+so you will be allowed to manually uninstall or update without any kind of side-effect
 
 Enjoy!! 
