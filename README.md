@@ -43,9 +43,7 @@ leveraging Magisk's power to install MiXplorer (and all it's add-ons) in one sho
 <b>n.b.</b>: now ahead this module will not put any apk in system folder, MiXplorer will be a system app, everithing will be installed at user's level, so will be able to install each single feature as you prefer.
 
 
-checkout-out also [MiX-Beta](https://mixplorer.com/beta/)
-
-and [MiXplorer-Silver](https://play.google.com/store/apps/details?id=com.mixplorer.silver) to support MiXplorer developer
+checkout-out also [MiX-Beta](https://mixplorer.com/beta/) or Get [MiXplorer-Silver](https://play.google.com/store/apps/details?id=com.mixplorer.silver) from PlayStore to support MiXplorer developer
 
 
 
