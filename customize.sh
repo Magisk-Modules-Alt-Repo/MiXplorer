@@ -5,12 +5,13 @@ list=$tmp/MiX-List
 names=$tmp/MiX-Names
 
 if [ "$API" -lt "30" ] ; then
-  echo 1QGtRpwwFDuVlS5hfnIg08ZUYuGJfQYei>$list
-  echo 1QGtRpwwFDuVlS5hfnIg08ZUYuGJfQYei=MiXplorer-api29>$names
+  echo 1HtTkKo6vrPW9g-lU8TMPfD4okxM_wWA7>$list
+  echo 1HtTkKo6vrPW9g-lU8TMPfD4okxM_wWA7=MiXplorer-api29>$names
 else
-  echo 1TcUJVt85K4cYXIgIAo634sINdYeamPZN>$list
-  echo 1TcUJVt85K4cYXIgIAo634sINdYeamPZN=MiXplorer>$names
+  echo 1JJmEXHslR5uED-H9r_rFLQurtHQ4nHfa>$list
+  echo 1JJmEXHslR5uED-H9r_rFLQurtHQ4nHfa=MiXplorer>$names
 fi
+
 
 if [ "$ARCH" = "arm" ] ; then
   # 32-bit
