@@ -5,13 +5,12 @@ list=$tmp/MiX-List
 names=$tmp/MiX-Names
 
 if [ "$API" -lt "30" ] ; then
-  echo 1HtTkKo6vrPW9g-lU8TMPfD4okxM_wWA7>$list
-  echo 1HtTkKo6vrPW9g-lU8TMPfD4okxM_wWA7=MiXplorer-api29>$names
+  echo 1E3lVWnPdf3YaEuwlacgFWGyG7aTcstKK>$list
+  echo 1E3lVWnPdf3YaEuwlacgFWGyG7aTcstKK=MiXplorer-api29>$names
 else
-  echo 1JJmEXHslR5uED-H9r_rFLQurtHQ4nHfa>$list
-  echo 1JJmEXHslR5uED-H9r_rFLQurtHQ4nHfa=MiXplorer>$names
+  echo 1Z90pssJkf6puabWuKe0XoZXhDQ5dZ7CD>$list
+  echo 1Z90pssJkf6puabWuKe0XoZXhDQ5dZ7CD=MiXplorer>$names
 fi
-
 
 if [ "$ARCH" = "arm" ] ; then
   # 32-bit
@@ -47,8 +46,8 @@ fi
 echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp>>$list
 echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp=MiX.addon.AutoTag>>$names
 
-echo 1JJIJHFiEZz4rnXl-v-_3lp26D77VYest>>$list
-echo 1JJIJHFiEZz4rnXl-v-_3lp26D77VYest=MiX.addon.Tagger>>$names
+echo 1QF60JtXjhif5ZOwfrYuwCtUS7NeeAL7I>>$list
+echo 1QF60JtXjhif5ZOwfrYuwCtUS7NeeAL7I=MiX.addon.Tagger>>$names
 
 chmod 777 $wget
 
