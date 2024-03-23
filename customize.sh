@@ -1,108 +1,75 @@
 #!/system/bin/sh
 
+## MiXplorer Sharing
+## https://drive.google.com/drive/folders/1BfeK39boriHy-9q76eXLLqbCwfV17-Gv
+
 tmp=$MODPATH/tmp
 list=$tmp/MiX-List
 names=$tmp/MiX-Names
 
+echo Installing... 
+echo    - MiXplorer...
 if [ "$API" -lt "30" ] ; then
-  echo 1E3lVWnPdf3YaEuwlacgFWGyG7aTcstKK>$list
-  echo 1E3lVWnPdf3YaEuwlacgFWGyG7aTcstKK=MiXplorer-api29>$names
+  pm install --dont-kill "$tmp/v-29/MiXplorer_v6.64.3-API29_B23090720.apk" > /dev/null 2>&1
 else
-  echo 1Z90pssJkf6puabWuKe0XoZXhDQ5dZ7CD>$list
-  echo 1Z90pssJkf6puabWuKe0XoZXhDQ5dZ7CD=MiXplorer>$names
+  pm install --dont-kill "$tmp/v-30/MiXplorer_v6.64.3_B23090710.apk" > /dev/null 2>&1
 fi
+sleep 1
 
 if [ "$ARCH" = "arm" ] ; then
   # 32-bit
-  wget=$MODPATH/tools/wget/armeabi-v7a/wget
-  echo 1M2am9N9ym6yB6nKz697QMnldzSMWgdK->>$list
-  echo 1M2am9N9ym6yB6nKz697QMnldzSMWgdK-=MiX.addon.PDF-arm>>$names
+  echo    - MiXArchive...
+  pm install --dont-kill "$tmp/arm/MiXArchive_B2308301-arm.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 1A3DpEqgQ_zXJWIcHR17-QXUwK1Tgy5hc>>$list
-  echo 1A3DpEqgQ_zXJWIcHR17-QXUwK1Tgy5hc=MiX.addon.Image-arm>>$names
+  echo    - MiXCodecs...
+  pm install --dont-kill "$tmp/arm/MiXCodecs_B2308302-arm.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 1M1EgQca6_DR7KneUAdvCiFFs1HNz5BmB>>$list
-  echo 1M1EgQca6_DR7KneUAdvCiFFs1HNz5BmB=MiX.addon.Codecs-arm>>$names
+  echo    - MiXImage...
+  pm install --dont-kill "$tmp/arm/MiXImage_B2308302-arm.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 1Uefuy7X1-akcdkmxckxdM1PyO2nNUB-a>>$list
-  echo 1Uefuy7X1-akcdkmxckxdM1PyO2nNUB-a=MiX.addon.Archive-arm>>$names
+  echo    - MiXPDF...
+  pm install --dont-kill "$tmp/arm/MiXPDF_B2308301-arm.apk" > /dev/null 2>&1
 else
   # 64-bit
-  wget=$MODPATH/tools/wget/arm64-v8a/wget
-  echo 1bWjIUHWvyLPnJ9L3FDDg0tdJuxJoQC54>>$list
-  echo 1bWjIUHWvyLPnJ9L3FDDg0tdJuxJoQC54=MiX.addon.PDF-arm64>>$names
+  echo    - MiXArchive...
+  pm install --dont-kill "$tmp/arm-64/MiXArchive_B2308302-arm64.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 1htfYSPjCTCzMerfdg6jdekiQSw4K7Nhb>>$list
-  echo 1htfYSPjCTCzMerfdg6jdekiQSw4K7Nhb=MiX.addon.Image-arm64>>$names
+  echo    - MiXCodecs...
+  pm install --dont-kill "$tmp/arm-64/MiXCodecs_B2308303-arm64.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 12xga5i6BKa3L_Ina_CLOvmGmbiJPs1wQ>>$list
-  echo 12xga5i6BKa3L_Ina_CLOvmGmbiJPs1wQ=MiX.addon.Codecs-arm64>>$names
+  echo    - MiXImage...
+  pm install --dont-kill "$tmp/arm-64/MiXImage_B2308303-arm64.apk" > /dev/null 2>&1
+  sleep 1
 
-  echo 1_zPA03z1kgUlTUjuR9ACn7yX9csMiHj5>>$list
-  echo 1_zPA03z1kgUlTUjuR9ACn7yX9csMiHj5=MiX.addon.Archive-arm64>>$names
+  echo    - MiXPDF...
+  pm install --dont-kill "$tmp/arm-64/MiXPDF_B2308302-arm64.apk" > /dev/null 2>&1
 fi
-
-# common
-echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp>>$list
-echo 1ipfIkKo1DuvXIYrkLQ8l-WmBFzaDzRnp=MiX.addon.AutoTag>>$names
-
-echo 1QF60JtXjhif5ZOwfrYuwCtUS7NeeAL7I>>$list
-echo 1QF60JtXjhif5ZOwfrYuwCtUS7NeeAL7I=MiX.addon.Tagger>>$names
-
-chmod 777 $wget
-
-echo
-echo
-echo Downloading... 
-for i in $(cat $list)
-do
-  name=`grep ^$i= $names | cut -d "=" -f 2`
-  echo    - $name...
-  $wget -q --no-check-certificate -O "$tmp/$name.apk" "https://docs.google.com/uc?export=download&confirm=&id=$i"
-done
-
 sleep 1
 
-echo
-echo
-echo Installing... 
-for i in $(cat $list)
-do
-  name=`grep ^$i= $names | cut -d "=" -f 2`
-  echo    - $name...
-  pm install --dont-kill "$tmp/$name.apk" > /dev/null 2>&1
-done
-echo    - MiX.addon.Metadata...
-pm install --dont-kill "$tmp/MiX.addon.Metadata.apk" > /dev/null 2>&1
-
-echo    - MiX.addon.Signer...
-pm install --dont-kill "$tmp/MiX.addon.Signer.apk" > /dev/null 2>&1
-
-echo    - MiX.addon.SMB...
-pm install --dont-kill "$tmp/MiX.addon.SMB.apk" > /dev/null 2>&1
-
+echo    - MiXAutoTag...
+pm install --dont-kill "$tmp/MiXAutoTag_1.0.apk" > /dev/null 2>&1
 sleep 1
 
-echo
+echo    - MiXMetadata...
+pm install --dont-kill "$tmp/MiXMetadata.apk" > /dev/null 2>&1
+sleep 1
+
+echo    - MiXSMB...
+pm install --dont-kill "$tmp/MiXSMB.apk" > /dev/null 2>&1
+sleep 1
+
+echo    - MiXTagger...
+pm install --dont-kill "$tmp/MiXTagger_B2309031.apk" > /dev/null 2>&1
+sleep 1
+
 echo
 echo Cleaning... 
-for i in $(cat $list)
-do
-  name=`grep ^$i= $names | cut -d "=" -f 2`
-  echo    - $name...
-  rm -rf "$tmp/$name.apk" > /dev/null 2>&1
-done
-echo    - MiX.addon.Metadata...
-rm -rf "$tmp/MiX.addon.Metadata.apk" > /dev/null 2>&1
-
-echo    - MiX.addon.Signer...
-rm -rf "$tmp/MiX.addon.Signer.apk" > /dev/null 2>&1
-
-echo    - MiX.addon.SMB...
-rm -rf "$tmp/MiX.addon.SMB.apk" > /dev/null 2>&1
-
 rm -rf $MODPATH/tmp
-rm -rf $MODPATH/tools
 
 echo > $MODPATH/remove
 echo > $MODPATH/disabled
